@@ -20,7 +20,7 @@ var authenticate = function(req, res, next) {
 
 //INDEX
 router.get('/', function(req, res, next) {
-  res.render('recipes/index', { recipes: recipes });
+  res.render('recipes/index');
 });
 
 //NEW
@@ -41,12 +41,13 @@ router.post('/', function(req, res, next) {
     cookingMethod: req.body.cookingMethod
   };
 
-  console.log(recipe)
-  .then(function() {
-    res.redirect('/recipes');
-  }, function(err) {
-    return next(err);
-  });
+  console.log(recipe);
+  res.redirect('/recipes');
+  // .then(function() {
+  //   res.redirect('/recipes');
+  // }, function(err) {
+  //   return next(err);
+  // });
 });
 
 
