@@ -33,6 +33,14 @@ router.get('/new', function(req, res, next) {
   res.render('recipes/new', { recipe: recipe });
 });
 
+//SHOW
+router.get('/:id', function(req, res, next) {
+  //var recipe = recipes.id(req.params.id);
+  var recipe = "This is my recipe";
+  if(!recipe) return next(makeError(res, 'Document not found', 404));
+  res.render('recipes/show', { recipe: recipe });
+});
+
 //CREATE
 router.post('/', function(req, res, next) {
   var recipe = {
