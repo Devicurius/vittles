@@ -21,10 +21,20 @@ var authenticate = function(req, res, next) {
 };
 
 //INDEX
-router.get('/', function(req, res, next) {
-  var user = global.currentUser;
-  var recipes = user.recipes;
-  res.render('recipes/index', {recipes: recipes});
+router.get('/', authenticate, function(req, res, next) {
+  console.log('you reached the root route for recipes.');
+  // var user = global.currentUser;
+
+  // var recipes = global.currentUser.recipes.populate('recipes')
+  Recipe.find({'_id': { $in: global.currentUser.recipes} })
+  // User.findById(global.currentUser._id).populate("recipes")
+  .then(function(recipes){
+    // var recipe = User.find({recipe: "meat"});
+    console.log('$$$$$$$$ user.recipes from the index: ' + recipes);
+    res.render('recipes/index', {recipes: recipes, message:req.flash() });
+  }, function(err) {
+    return next(err);
+  });
 });
 
 //NEW
