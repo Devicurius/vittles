@@ -18,7 +18,7 @@ var authenticate = function(req, res, next) {
   else {
     next();
   }
-}
+};
 
 //INDEX
 router.get('/', function(req, res, next) {
@@ -39,10 +39,13 @@ router.get('/new', authenticate, function(req, res, next) {
 
 //SHOW
 router.get('/:id', authenticate, function(req, res, next) {
-  var recipe = Recipe.findOne({_id: req.params.id});
-
+  Recipe.findOne({_id: req.params.id})
   //if(!Recipe) return next(makeError(res, 'Document not found', 404));
-  res.render('recipes/show', { recipe: recipe, message: req.flash() });
+  .then(function(recipe) {
+    res.render('recipes/show', { recipe: recipe, message: req.flash() });
+  }, function(err) {
+    return next(err);
+  });
 });
 
 //CREATE
@@ -50,8 +53,7 @@ router.post('/', authenticate, function(req, res, next) {
   var user = global.currentUser;
   var recipe = new Recipe({
     food: req.body.food,
-    snack: req.body.snack,
-    cookingMethod: req.body.cookingMethod
+    drank: req.body.drank,
   });
   //user.recipes.push(recipe);
   //console.log(user.recipes);
