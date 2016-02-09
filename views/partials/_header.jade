@@ -1,11 +1,14 @@
 ul.nav
   -if (currentUser) {
     li #{currentUser.local.email}
-    li a(href='#') Logout
+    li
+      a(href='/logout') Logout
   -}
   -else {
-    li a(href='#') login
-    li a(href='#') signup
+    li
+      a(href="/login") login
+    li
+      a(href="/signup") signup
   -}
 
 div.flash
