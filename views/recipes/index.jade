@@ -1,12 +1,19 @@
-doctype html
-html(lang="en")
-head
+//- extends layout
 
-body
-  header
+//- block content
 
-  main
-    div
-      h3
-        My Recipes: #{recipes}
+main
+  div
+    h3
+      | My Recipes:
+      script.
+        #{recipe}
+
+  //-      recipeName: String,
+  //- lorem: String,
+  //- ingredients: String,
+  //- instructions: String,
+  //- food: String,
+  //- snack: String,
+  //- cookingMethod: String,
 

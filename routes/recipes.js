@@ -24,7 +24,7 @@ var authenticate = function(req, res, next) {
 router.get('/', function(req, res, next) {
   var user = global.currentUser;
   var recipes = user.recipes;
-  res.render('recipes/index');
+  res.render('recipes/index', {recipes: recipes});
 });
 
 //NEW
