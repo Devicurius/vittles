@@ -3,7 +3,7 @@ var router = express.Router();
 
 //Dashboard
 router.get('/', function(req, res, next) {
-  res.render('users/index');
+  res.render('users/show');
 });
 
 //Edit Profile
@@ -36,6 +36,7 @@ router.delete('/:id', function(req, res, next) {
     }, function(err) {
       return next(err);
     });
+  }
 });
 
 module.exports = router;
