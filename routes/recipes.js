@@ -30,7 +30,7 @@ router.get('/', authenticate, function(req, res, next) {
   // User.findById(global.currentUser._id).populate("recipes")
   .then(function(recipes){
     // var recipe = User.find({recipe: "meat"});
-    console.log('$$$$$$$$ user.recipes from the index: ' + recipes);
+    // console.log('$$$$$$$$ user.recipes from the index: ' + recipes);
     res.render('recipes/index', {recipes: recipes, message:req.flash() });
   }, function(err) {
     return next(err);

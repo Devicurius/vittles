@@ -1,18 +1,9 @@
-//- extends layout
+extend ../layout
 
-//- block content
+block content
 
-main
-  div
-    h3 INDEX. My Recipes: #{recipes}
-    h3 recipes.food #{recipes.food}
-
-  //-      recipeName: String,
-  //- lorem: String,
-  //- ingredients: String,
-  //- instructions: String,
-  //- food: String,
-  //- snack: String,
-  //- cookingMethod: String,
-
-
+  main
+    - var entries = recipes
+    div
+      each value, index in entries
+        p= index+1 + ". " + "vittles: " + value.food + "  potion: " + value.drank
