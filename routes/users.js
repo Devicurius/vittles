@@ -1,5 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var authenticate = function(req, res, next) {
+  if(!req.isAuthenticated()) {
+    res.redirect('/');
+  }
+  else {
+    next();
+  }
+}
 
 //Dashboard
 router.get('/', function(req, res, next) {
