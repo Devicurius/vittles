@@ -36,9 +36,8 @@ router.get('/new', function(req, res, next) {
 
 //SHOW
 router.get('/:id', function(req, res, next) {
-  //var recipe = recipes.id(req.params.id);
-  var recipe = "This is my recipe";
-  if(!recipe) return next(makeError(res, 'Document not found', 404));
+  var recipe = Recipe.findOne({_id: req.params.id});
+  //if(!Recipe) return next(makeError(res, 'Document not found', 404));
   res.render('recipes/show', { recipe: recipe });
 });
 
