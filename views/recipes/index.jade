@@ -1,12 +1,9 @@
-doctype html
-html(lang="en")
-head
+extend ../layout
 
-body
-  header
+block content
 
   main
+    - var entries = recipes
     div
-      h3
-        My Recipes: #{recipes}
-
+      each value, index in entries
+        p= index+1 + ". " + "vittles: " + value.food + "  potion: " + value.drank
