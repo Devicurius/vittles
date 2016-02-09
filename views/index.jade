@@ -1,5 +1,16 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html(lang="en")
+  head
+    title= title
+      include partials/_head
+    body
+      header
+        include partials/_header
+      main
+        div
+          h1 Welcome to our recipe blogging app.  It'll make you seem fancy (even though you're not)
+      footer
+        include partials/_footer
+clear
