@@ -18,7 +18,7 @@ var authenticate = function(req, res, next) {
   else {
     next();
   }
-}
+};
 
 //INDEX
 router.get('/', function(req, res, next) {
@@ -50,8 +50,7 @@ router.post('/', authenticate, function(req, res, next) {
   var user = global.currentUser;
   var recipe = new Recipe({
     food: req.body.food,
-    snack: req.body.snack,
-    cookingMethod: req.body.cookingMethod
+    drank: req.body.drank,
   });
   //user.recipes.push(recipe);
   //console.log(user.recipes);

@@ -7,27 +7,27 @@ htm(lang="en")
 
     main
       div
-        h2 New Vittles Search
+        h2 Choose Vittles and a Drank
         form(method="post", action="/recipes")
           div
             label(for="food") Food
             select(id="food", name="food")
-              option(value='meat') Meat
-              option(value='seafood') Seafood
-              option(value= 'veggies') Veggies
+              option(value='breakfast') BREAKFAST
+              option(value='lunch') LUNCH
+              option(value= 'supper') SUPPER
+              option(value= 'brunch') BRUNCH
+              option(value= 'bar food') BAR FOOD
+              option(value= 'sammiches') SAMMICHES
           div
-            label(for="snack") Snack
-            select(id="snack", name="snack")
-              option(value='sweet') Sweet
-              option(value='savory') Savory
-              option(value= 'healthy') Healthy
-          div
-            label(for="cookingMethod") Cooking Method
-            select(id="cookingMethod", name="cookingMethod")
-              option(value='fast') Fast
-              option(value='slow') Slow
-              option(value= 'raw') Raw
+            label(for="drank") Drank
+            select(id="drank", name="drank")
+              option(value= 'iced tea') TEA
+              option(value= 'coke') COKE
+              option(value='coldbeer') COLDBEER
+              option(value='craft beer') CRAFT BEER
+              option(value='cocktail') COCKTAIL
+              option(value= 'coffee') COFFEE
+              option(value= 'juice') JUICE
           div
             input(type="submit")
     footer
-
