@@ -25,24 +25,24 @@ router.get('/', function(req, res, next) {
 });
 
 //NEW
-router.get('/new', function(req, res, next) {
+router.get('/new', authenticate, function(req, res, next) {
   var recipe = {
     food: '',
     snack: '',
     cookingMethod: ''
   };
-  res.render('recipes/new', { recipe: recipe });
+  res.render('recipes/new', { recipe: recipe, message: req.flash() });
 });
 
 //SHOW
-router.get('/:id', function(req, res, next) {
+router.get('/:id', authenticate, function(req, res, next) {
   var recipe = Recipe.findOne({_id: req.params.id});
   //if(!Recipe) return next(makeError(res, 'Document not found', 404));
-  res.render('recipes/show', { recipe: recipe });
+  res.render('recipes/show', { recipe: recipe, message: req.flash() });
 });
 
 //CREATE
-router.post('/', function(req, res, next) {
+router.post('/', authenticate, function(req, res, next) {
   var recipe = new Recipe({
     food: req.body.food,
     snack: req.body.snack,

@@ -1,3 +1,13 @@
+ul.nav
+  -if (currentUser) {
+    li #{currentUser.local.email}
+    li a(href='#') Logout
+  -}
+  -else {
+    li a(href='#') login
+    li a(href='#') signup
+  -}
+
 div.flash
   - if (typeof message !== 'undefined') {
     - if (typeof message.error !== 'undefined' && message.error.length > 0) {

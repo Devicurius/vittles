@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var User = require('../models/user');
 var authenticate = function(req, res, next) {
   if(!req.isAuthenticated()) {
     res.redirect('/');
@@ -10,18 +11,20 @@ var authenticate = function(req, res, next) {
 }
 
 //Dashboard
-router.get('/', function(req, res, next) {
+router.get('/:id', authenticate, function(req, res, next) {
+  var user = global.currentUser.id(req.params.id);
   res.render('users/show');
 });
 
 //Edit Profile
-router.get('/:id/edit', function(req, res, next) {
+router.get('/:id', authenticate, function(req, res, next) {
+  var user = global.currentUser.id(req.params.id);
   res.render('users/edit');
 });
 
 //Update Profile
 router.put('/:id', function(req, res, next) {
-  var user = User.id(req.params.id);
+  var user = global.currentUser.id(req.params.id);
   if(!user) return next(makeError(res, 'Document not found', 404));
   else {
     user.save()
@@ -35,7 +38,7 @@ router.put('/:id', function(req, res, next) {
 
 //Delete Profile
 router.delete('/:id', function(req, res, next) {
-  var user = User.id(req.params.id);
+  var user = global.currentUser.id(req.params.id);
   if(!user) return next(makeError(res, 'Document not found', 404));
   else {
     user.delete()
