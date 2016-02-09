@@ -39,10 +39,13 @@ router.get('/new', authenticate, function(req, res, next) {
 
 //SHOW
 router.get('/:id', authenticate, function(req, res, next) {
-  var recipe = Recipe.findOne({_id: req.params.id});
-
+  Recipe.findOne({_id: req.params.id})
   //if(!Recipe) return next(makeError(res, 'Document not found', 404));
-  res.render('recipes/show', { recipe: recipe, message: req.flash() });
+  .then(function(recipe) {
+    res.render('recipes/show', { recipe: recipe, message: req.flash() });
+  }, function(err) {
+    return next(err);
+  });
 });
 
 //CREATE
