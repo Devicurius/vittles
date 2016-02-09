@@ -22,13 +22,12 @@ var authenticate = function(req, res, next) {
 
 //INDEX
 router.get('/', function(req, res, next) {
-  var user = global.currentUser.id;
-  console.log('USER',user);
-  //var recipes = user.recipes;
-  var recipes = Recipe.find({ user : user });
-  console.log(recipes);
-  //var recipe = currentUser.recipes.id(req.params.id);
+  var user = global.currentUser;
 
+  var recipes = user.recipes;
+  console.log('!!!!!!!!!!!!!!!!!!!',recipes);
+  // var test = user.populate(recipes);
+  // console.log('!!!!!!!!!!!!!!!!!!!',test);
   res.render('recipes/index');
 });
 
@@ -68,7 +67,6 @@ router.post('/', authenticate, function(req, res, next) {
   })
   .then(function(savedUser) {
     res.redirect('/recipes');
-    //next();
   }, function(err) {
     return next(err);
   });
