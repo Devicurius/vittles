@@ -1,0 +1,12 @@
+div.flash
+  - if (typeof message !== 'undefined') {
+    - if (typeof message.error !== 'undefined' && message.error.length > 0) {
+      div.bg-danger= message.error
+    - }
+    - if (typeof message.info !== 'undefined' && message.info.length > 0) {
+      div.bg-info= message.info
+    - }
+    -if (typeof message.success !== 'undefined' && message.success.length > 0) {
+      div.bg-success= message.success
+    - }
+  - }
