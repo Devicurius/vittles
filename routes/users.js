@@ -10,9 +10,14 @@ var authenticate = function(req, res, next) {
   }
 }
 
+//Index
+router.get('/', authenticate, function(req, res, next) {
+  res.redirect('/');
+});
+
 //Dashboard
 router.get('/:id', authenticate, function(req, res, next) {
-  var user = global.currentUser.id(req.params.id);
+  var user = users.id(req.params.id);
   res.render('users/show');
 });
 
