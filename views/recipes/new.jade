@@ -1,0 +1,33 @@
+doctype html
+htm(lang="en")
+  head
+
+  body
+    header
+
+    main
+      div
+        h2 New Vittles Search
+        form(method="post", action="/recipes")
+          div
+            label(for="food") Food
+            select(id="food", name="food")
+              option(value='meat') Meat
+              option(value='seafood') Seafood
+              option(value= 'veggies') Veggies
+          div
+            label(for="snack") Snack
+            select(id="snack", name="snack")
+              option(value='sweet') Sweet
+              option(value='savory') Savory
+              option(value= 'healthy') Healthy
+          div
+            label(for="cookingMethod") Cooking Method
+            select(id="cookingMethod", name="cookingMethod")
+              option(value='fast') Fast
+              option(value='slow') Slow
+              option(value= 'raw') Raw
+          div
+            input(type="submit")
+    footer
+
