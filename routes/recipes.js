@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Recipe = require('../models/recipe');
+var mongoose = require('mongoose');
 
 function makeError(res, message, status) {
   res.statusCode = status;
@@ -43,19 +44,20 @@ router.get('/:id', function(req, res, next) {
 
 //CREATE
 router.post('/', function(req, res, next) {
-  var recipe = {
+  var recipe = new Recipe({
     food: req.body.food,
     snack: req.body.snack,
     cookingMethod: req.body.cookingMethod
-  };
+  });
 
   console.log(recipe);
-  res.redirect('/recipes');
-  // .then(function() {
-  //   res.redirect('/recipes');
-  // }, function(err) {
-  //   return next(err);
-  // });
+  recipe.save()
+  .then(function() {
+    res.redirect('/recipes');
+    next();
+  }, function(err) {
+    return next(err);
+  });
 });
 
 
