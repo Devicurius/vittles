@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Recipe = require('../models/recipe');
+var User = require('../models/recipe');
 var mongoose = require('mongoose');
 
 function makeError(res, message, status) {
@@ -43,17 +44,20 @@ router.get('/:id', authenticate, function(req, res, next) {
 
 //CREATE
 router.post('/', authenticate, function(req, res, next) {
+  var user = global.currentUser;
   var recipe = new Recipe({
     food: req.body.food,
     snack: req.body.snack,
     cookingMethod: req.body.cookingMethod
   });
+  user.recipes.push(recipe);
+  //console.log(user.recipes);
+  recipe.user = user.id;
 
-  console.log(recipe);
   recipe.save()
   .then(function() {
     res.redirect('/recipes');
-    next();
+    //next();
   }, function(err) {
     return next(err);
   });
