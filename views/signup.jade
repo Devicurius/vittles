@@ -1,19 +1,14 @@
-doctype html
-html(lang="en")
-  head
+extends layout
 
-  body
-    header
-      include partials/_header
-    main
-      div
-        h2 Signup
-        form(method="post" action="/signup")
-          div.form-group
-            label(for="email") Email
-            input.form-control(type="text", name="email", id="email")
-          div.form-group
-            label(for="email") Password
-            input.form-control(type="password", name="password", id="password")
-          input.btn.btn-default(type="submit")
+block content
+  div
+    h2 Signup
+    form(method="post" action="/signup")
+      div.form-group
+        label(for="email") Email
+        input.form-control(type="text", name="email", id="email")
+      div.form-group
+        label(for="email") Password
+        input.form-control(type="password", name="password", id="password")
+      input.btn.btn-default(type="submit")
 
