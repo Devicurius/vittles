@@ -36,16 +36,15 @@ app.use(flash());
 
 require('./config/passport/passport')(passport);
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/recipes', recipes);
-
 //Set current user for views
 app.use(function (req, res, next) {
   global.currentUser = req.user;
   next();
 });
 
+app.use('/', routes);
+app.use('/users', users);
+app.use('/recipes', recipes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

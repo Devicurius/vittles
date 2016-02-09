@@ -17,19 +17,19 @@ router.get('/', authenticate, function(req, res, next) {
 
 //Dashboard
 router.get('/:id', authenticate, function(req, res, next) {
-  var user = users.id(req.params.id);
-  res.render('users/show');
+  var user = global.currentUser.id;
+  res.render('users/show', { user: user });
 });
 
 //Edit Profile
 router.get('/:id', authenticate, function(req, res, next) {
-  var user = global.currentUser.id(req.params.id);
-  res.render('users/edit');
+  var user = global.currentUser.id;
+  res.render('users/edit', { user: user });
 });
 
 //Update Profile
-router.put('/:id', function(req, res, next) {
-  var user = global.currentUser.id(req.params.id);
+router.put('/:id', authenticate, function(req, res, next) {
+  var user = global.currentUser.id;
   if(!user) return next(makeError(res, 'Document not found', 404));
   else {
     user.save()
@@ -42,8 +42,8 @@ router.put('/:id', function(req, res, next) {
 });
 
 //Delete Profile
-router.delete('/:id', function(req, res, next) {
-  var user = global.currentUser.id(req.params.id);
+router.delete('/:id', authenticate, function(req, res, next) {
+  var user = global.currentUser.id;
   if(!user) return next(makeError(res, 'Document not found', 404));
   else {
     user.delete()
