@@ -6,8 +6,8 @@ var RecipeSchema = mongoose.Schema({
   ingredients: String,
   instructions: String,
   food: String,
-  snack: String,
-  cookingMethod: String,
+  drank: String,
+
 
   // // PAGE ELEMENTS INDEPENDENT OF USER CHOICES
   // stylesheet: String,
