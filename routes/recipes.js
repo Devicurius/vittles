@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Recipe = require('../models/recipe');
-var User = require('../models/recipe');
+var User = require('../models/user');
 var mongoose = require('mongoose');
 
 function makeError(res, message, status) {
@@ -22,6 +22,13 @@ var authenticate = function(req, res, next) {
 
 //INDEX
 router.get('/', function(req, res, next) {
+  var user = global.currentUser.id;
+  console.log('USER',user);
+  //var recipes = user.recipes;
+  var recipes = Recipe.find({ user : user });
+  console.log(recipes);
+  //var recipe = currentUser.recipes.id(req.params.id);
+
   res.render('recipes/index');
 });
 
@@ -38,6 +45,7 @@ router.get('/new', authenticate, function(req, res, next) {
 //SHOW
 router.get('/:id', authenticate, function(req, res, next) {
   var recipe = Recipe.findOne({_id: req.params.id});
+
   //if(!Recipe) return next(makeError(res, 'Document not found', 404));
   res.render('recipes/show', { recipe: recipe, message: req.flash() });
 });
@@ -50,12 +58,15 @@ router.post('/', authenticate, function(req, res, next) {
     snack: req.body.snack,
     cookingMethod: req.body.cookingMethod
   });
-  user.recipes.push(recipe);
+  //user.recipes.push(recipe);
   //console.log(user.recipes);
   recipe.user = user.id;
-
   recipe.save()
-  .then(function() {
+  .then(function(savedRecipe) {
+    user.recipes.push(savedRecipe);
+    return user.save();
+  })
+  .then(function(savedUser) {
     res.redirect('/recipes');
     //next();
   }, function(err) {
