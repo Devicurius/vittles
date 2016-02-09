@@ -1,8 +1,8 @@
 ul.nav
-  -if (currentUser) {
-    li #{currentUser.local.email}
+  -if (global.currentUser) {
+    li #{global.currentUser.local.email}
     li
-      a(href='/logout') Logout
+      a(href="/logout") Logout
   -}
   -else {
     li
