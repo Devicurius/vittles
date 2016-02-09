@@ -1,7 +1,13 @@
 doctype html
-html
+html(lang="en")
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    header
+      include partials/_header
+    main
     block content
+    footer
+      include partials/_footer
+

@@ -4,7 +4,7 @@ var passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', message: req.flash() });  // add the message
+  res.render('index', { title: 'Vittles & Potions', message: req.flash() });  // add the message
 });
 
 // GET /signup
@@ -43,6 +43,10 @@ router.post('/login', function(req, res, next) {
 router.get('/logout', function(req, res, next) {
   req.logout();
   res.redirect('/');
+});
+
+router.get('/about', function(req, res, next) {
+  res.render('about');
 });
 
 // // Restricted page
