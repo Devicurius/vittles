@@ -4,7 +4,7 @@ var passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Vittles & Potions', message: req.flash() });  // add the message
+  res.render('index', { title: 'Vittles & Drank', message: req.flash() });  // add the message
 });
 
 // GET /signup
@@ -15,7 +15,7 @@ router.get('/signup', function(req, res, next) {
 // POST /signup
 router.post('/signup', function(req, res, next) {
   var signUpStrategy = passport.authenticate('local-signup', {
-    successRedirect : '/login',
+    successRedirect : '/users/show',
     failureRedirect : '/signup',
     failureFlash : true
   });
