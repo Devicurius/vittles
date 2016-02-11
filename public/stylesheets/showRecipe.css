@@ -1,0 +1,69 @@
+#showRecipe {
+  background-image: url("../img/bgPlus.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+/*  border: black 1px solid;*/
+  height:800px;
+}
+
+body {
+  padding: 0;
+}
+
+hr.style-eight{
+    margin:;
+    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+#skilletImage {
+  margin-top: 10%;
+}
+
+#bannerBG {
+  height: 12%;
+  width: 100%;
+  background-color: black;
+  margin: 0 auto;
+}
+
+#showPairingLogo {
+  margin: 0 auto;
+}
+
+#vittlesRow {
+/*  border: black 1px solid;*/
+  height:40%;
+}
+
+#drinksRow{/*
+  border: black 1px solid;*/
+  height:50%;
+}
+
+
+#vittlesImg{
+  border: black 1px solid;
+  height: 100%;
+  background-image: url("../img/power-greens-breakfast-skillet-11.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#vittlesText{
+  /*border: black 1px solid;*/
+  height:100%;
+  background-color: white;
+}
+
+#drinksImg{
+  border: black 1px solid;
+  height: 100%;
+  background-image: url("../img/hotToddyTime.jpg");
+  background-size: cover;
+  background-position: center;
+}
+

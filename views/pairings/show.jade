@@ -1,5 +1,26 @@
 extends ../layout
 
-div
-  p FOOD: #{pairing.food}
-  p DRINK: #{pairing.drink}
+block content
+
+  hr.style-eight
+  div#showRecipe.container-fluid
+    div.row#bannerBG
+      div.col-lg-10.col-md-12
+      div.col-lg-8.col-xs-12.text-center
+        img(src="../img/VandDlogo.png" alt="Vittles and Drinks Logo").img-responsive#showPairingLogo
+    div.row.text-center
+      h1 Hot <i><b>#{pairing.food}</b></i> skillets, Even hotter <i><b>#{pairing.drink}</i></b> toddies.
+    div.row#vittlesRow
+      div.col-lg-6.col-lg-offset-1.col-md-5.col-md-offset-1.col-sm-6.col-xs-12#vittlesImg
+      div.col-lg-4.col-md-5.col-sm-6.col-xs-12#vittlesText
+        h3 Some insightful retrospecive about the permanance of cast iron as its cast down for generations.
+        h4 Cast iron cookware was especially popular among homemakers and housekeepers during the first half of the 20th century. Most American households had at least one cast iron cooking pan, and such brands as Griswold and Wagner Ware were especially popular. Although both of these companies folded in the late 1950s and the brands are now owned by the American Culinary.
+    hr.style-eight
+    div.row#drinksRow
+      div.col-lg-6.col-lg-offset-1.col-md-5.col-md-offset-1.col-sm-6.col-xs-12#vittlesText
+        h1 Warm your vittles . . .
+        h3 with this classic take on your favite brunch lubricant, Hot Toddies.
+        h4 Sweet Tea Hot Toddy, makes two.
+          | Needed: tea of choice (I used a vanilla chamomile. I think black or herbal teas are best for this, but you can try a green if you prefer.), one lemon, 2 tablespoons honey, 2 ounces (I use a shot glass to meaure) bourbon or whiskey and hot water.
+          | Heat water and when ready steep the tea. I keep mine light by steeping for less time than usual. To each glass add juice from half a lemon, 1 tablespoon honey and 1 ounce alcohol. Stir to combine. Feel free to add more honey if you like yours a little more on the sweet side.
+      div.col-lg-4.col-md-5.col-sm-6.col-xs-12#drinksImg
