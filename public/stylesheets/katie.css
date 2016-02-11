@@ -1,6 +1,10 @@
+/*Default Style Changes to keep footer at bottom of all interior pages */
 html, body {
-    margin: 0;
-    height: 100%;
+  height: 100%;
+}
+
+.container-fluid {
+  height: 100%;
 }
 
 /* About */
@@ -78,18 +82,7 @@ html, body {
 }
 
 /* Footer */
-/*footer {
-  position: relative;
-}
-footer p{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 5%;
-}*/
+
 
 
 
