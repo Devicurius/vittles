@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
-var Recipe = require('./recipe');
+var Pairing = require('./pairing');
 
 var UserSchema = new mongoose.Schema({
   local: {
@@ -8,9 +8,9 @@ var UserSchema = new mongoose.Schema({
     password: String,
     // twitter_handle: String,
   },
-  recipes: [{
+  pairings: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Recipe'
+    ref: 'Pairing'
   }]
 });
 

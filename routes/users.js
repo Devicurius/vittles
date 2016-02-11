@@ -8,7 +8,7 @@ var authenticate = function(req, res, next) {
   else {
     next();
   }
-}
+};
 
 //Index
 router.get('/', authenticate, function(req, res, next) {

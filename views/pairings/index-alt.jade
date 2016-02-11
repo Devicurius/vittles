@@ -13,13 +13,13 @@ html(lang="en")#userRecipes
     header
       include ../partials/_header
     .container-fluid
-    - var entries = recipes
-    h1.text-center Saved Entries:
+    - var entries = pairings
+    h1.text-center Saved Pairings:
     .row
-      each value, index in entries
+      each value, index in pairings
         .col-md-4.col-xs-12.text-center
           .card
-            h2= value.food + " & " + value.drank
+            h2= value.food + " & " + value.drink
             //p= index+1 + ". " + "vittles: " + value.food + "  potion: " + value.drank
     footer
       include ../partials/_footer

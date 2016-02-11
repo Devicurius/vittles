@@ -1,0 +1,9 @@
+extend ../layout
+
+block content
+
+  main
+    - var entries = recipes
+    div
+      each pairing in pairings
+        p Chow down on some #{pairing.food} then wash it down with #{pairing.drink}.
