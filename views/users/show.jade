@@ -1,12 +1,14 @@
 extend ../layout
 
 block content
-  h2 Vittles & Drank
-  h3 User Dashboard
-
-  a(href="/recipes/new") Find Recipe
-  a(href="/recipes") My Recipes
-  a(href="/users/edit") Edit Profile
+  h1#user-profile.text-center Vittles & Drinks User Profile:
+  .row.text-center
+    .col-md-4.col-xs-12
+      a(class="btn btn-default" href="/recipes/new") Find Recipe
+    .col-md-4.col-xs-12
+      a(class="btn btn-default" href="/recipes") My Recipes
+    .col-md-4.col-xs-12
+      a(class="btn btn-default" href="/users/edit") Edit Profile
 
 
 
