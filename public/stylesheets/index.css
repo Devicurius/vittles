@@ -1,0 +1,71 @@
+#index {
+  background-image: url("../img/chicken-and-waffles-1-1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+html,
+body { height: 100%; }
+
+#logo {
+  background-image: url("../img/vittlesanddrinklogo.png");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 250px;
+  float: none;
+  margin: auto;
+}
+
+#index .page-row {
+  display: table-row;
+  height: 30px;
+}
+
+#index .page-row-expanded {
+  height: 100%;
+}
+
+#index footer {
+  position: static;
+  height: 10%;
+  width: 100%;
+  margin: 10% auto 2% auto;
+}
+
+#index-buttons{
+  margin:  10% auto auto auto;
+  float: none;
+}
+
+#index .btn-lg.col-lg-4.col-md-3.col-sm-5{
+  margin-right: 20px;
+  margin-left:  20px;
+}
+
+#left-button {
+  float: left;
+  width: 120px;
+  height: 40px;
+  background: none;
+  border: solid white 1px;
+  border-radius: 0;
+}
+
+#right-button {
+  float: right;
+  width: 120px;
+  height: 40px;
+  background: none;
+  border: solid white 1px;
+  border-radius: 0;
+}
+
+ #index > footer > div > div > a {
+    color: white;
+ }
+
+#index a {
+  color: white;
+}

@@ -1,8 +1,23 @@
-extends layout
-
-block content
-    div
-      h1 Vittles & Drank
-      a(class="btn btn-default" href="/signup") Sign Up
-      a(class="btn btn-default" href="/signup") Login
-
+doctype html
+html(lang="en")
+  head
+    title= title
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/index.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS", crossorigin="anonymous")
+  main.page-row.page-row-expanded
+  body#index
+    header
+    div.container-fluid
+      div#logo.row.col-lg-5.col-md-6.col-sm-6.col-xs-12
+      div.row.col-lg-4.col-md-6.col-sm-6#index-buttons.text-center
+        a.btn-lg.col-lg-3.col-md-1.col-sm-2.col-xs-1#left-button(href="/signup") Sign Up
+        a.btn-lg.col-lg-3.col-md-1.col-sm-2.col-xs-1#right-button(href="/login") Log In
+    footer.page-ro
+      div
+        div.text-center
+          a#imgIndex(href="/about") Click here to learn more about Vittle and Drinks.
