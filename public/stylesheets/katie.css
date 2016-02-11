@@ -1,3 +1,8 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
 /* About */
 #about #summary {
   width: 40%;
@@ -76,28 +81,15 @@
 /*footer {
   position: relative;
 }
-
-footer p {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-}*/
-/*#about footer {
-  position: relative;
-  display: block;
-  bottom: 0;
-}*/
-
-footer {
-  position: relative;
-  width: 100%;
-}
 footer p{
   position: absolute;
   bottom: 0;
-}
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+}*/
+
 
 

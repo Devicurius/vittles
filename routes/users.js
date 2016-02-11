@@ -26,6 +26,7 @@ router.put('/:id', authenticate, function(req, res, next) {
   var user = global.currentUser.id;
   if(!user) return next(makeError(res, 'Document not found', 404));
   else {
+    console.log('!!!!!!!!!!!!!!!',req.body);
     user.save()
     .then(function(saved) {
       res.redirect('/');
