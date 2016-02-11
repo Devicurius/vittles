@@ -1,25 +1,47 @@
-ul.nav
-  -if (global.currentUser) {
-    li #{global.currentUser.local.email}
-    li
-      a(href="/logout") Logout
-  -}
-  -else {
-    li
-      a(href="/login") login
-    li
-      a(href="/signup") signup
-  -}
+nav.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    <!-- Brand and toggle get grouped for better mobile display -->
+    .navbar-header
+      button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false")
+        span.sr-only Toggle Nav
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a(class="navbar-brand" href="/") Vittles & Drink
 
-div.flash
-  - if (typeof message !== 'undefined') {
-    - if (typeof message.error !== 'undefined' && message.error.length > 0) {
-      div.bg-danger= message.error
-    - }
-    - if (typeof message.info !== 'undefined' && message.info.length > 0) {
-      div.bg-info= message.info
-    - }
-    -if (typeof message.success !== 'undefined' && message.success.length > 0) {
-      div.bg-success= message.success
-    - }
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    #navbar-collapse.collapse.navbar-collapse
+      //ul.nav.navbar-nav
+        //li.active
+          //a(href="#") Link
+            //span.sr-only CURRENT
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href="/about") About
+        -if (global.currentUser) {
+          //li #{global.currentUser.local.email}
+          li
+            a(href="/users/show") Profile
+          li
+            a(href="/logout") Logout
+        -}
+        -else {
+          li
+            a(href="/login") Login
+          li
+            a(href="/signup") Sign Up
+        -}
+
+.flash
+- if (typeof message !== 'undefined') {
+  - if (typeof message.error !== 'undefined' && message.error.length > 0) {
+    div.bg-danger= message.error
   - }
+  - if (typeof message.info !== 'undefined' && message.info.length > 0) {
+    div.bg-info= message.info
+  - }
+  -if (typeof message.success !== 'undefined' && message.success.length > 0) {
+    div.bg-success= message.success
+  - }
+- }
+
