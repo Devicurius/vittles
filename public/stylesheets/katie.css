@@ -1,0 +1,94 @@
+/* About */
+#about #summary {
+  width: 40%;
+  margin: 1% auto;
+}
+
+#about #tech ul {
+  list-style-type: none;
+  width: 40%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#about #tech {
+  margin: 5% auto;
+}
+
+#about footer {
+  margin-top: 5%;
+}
+
+/* User */
+#user-profile {
+  margin-bottom: 5%;
+}
+
+#userRecipes {
+/*  background: url('../bgAllRecipes.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;*/
+}
+
+#userRecipes body {
+  background-color: transparent;
+}
+
+#userRecipes .card {
+  /*background-color: rgba(255, 255, 255, 0.7);*/
+  background-color: #f1f1f1;
+  margin: 0 auto;
+  color: #000;
+  height: 40vh;
+  padding-top: 10vh;
+  border: 1px solid #000;
+}
+
+#userRecipes h1 {
+  margin: 5% auto;
+}
+
+/* NAV */
+.navbar-default {
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+  color: #fff;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:active {
+  color: #ccc;
+}
+
+.navbar-default .navbar-toggle {
+  color: #fff;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  color: #fff;
+}
+
+/* Footer */
+footer p{
+  position: relative;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+#about footer {
+  position: relative;
+  display: block;
+  bottom: 0;
+}
+
+

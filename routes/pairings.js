@@ -31,7 +31,7 @@ router.get('/', authenticate, function(req, res, next) {
   .then(function(pairings){
     // var pairing = User.find({pairing: "meat"});
     console.log('$$$$$$$$ user.pairings from the index: ' + pairings);
-    res.render('pairings/index', {pairings: pairings, message:req.flash() });
+    res.render('pairings/index-alt', {pairings: pairings, message:req.flash() });
   }, function(err) {
     return next(err);
   });

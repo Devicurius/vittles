@@ -15,14 +15,8 @@ router.get('/', authenticate, function(req, res, next) {
   res.redirect('/');
 });
 
-//Dashboard
-router.get('/:id', authenticate, function(req, res, next) {
-  var user = global.currentUser.id;
-  res.render('users/show', { user: user });
-});
-
 //Edit Profile
-router.get('/:id', authenticate, function(req, res, next) {
+router.get('/:id/edit', authenticate, function(req, res, next) {
   var user = global.currentUser.id;
   res.render('users/edit', { user: user });
 });
@@ -39,6 +33,12 @@ router.put('/:id', authenticate, function(req, res, next) {
       return next(err);
     });
   }
+});
+
+//Dashboard
+router.get('/:id', authenticate, function(req, res, next) {
+  var user = global.currentUser.id;
+  res.render('users/show', { user: user });
 });
 
 //Delete Profile
