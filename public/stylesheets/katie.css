@@ -1,3 +1,4 @@
+/* About */
 #about #summary {
   width: 40%;
   margin: 1% auto;
@@ -18,6 +19,7 @@
   margin-top: 5%;
 }
 
+/* User */
 #user-profile {
   margin-bottom: 5%;
 }
@@ -45,10 +47,10 @@
 }
 
 #userRecipes h1 {
-  margin-bottom: 5%;
-  color: #fff;
+  margin: 5% auto;
 }
 
+/* NAV */
 .navbar-default {
   background-color: #000;
   color: #fff;
@@ -70,13 +72,23 @@
   color: #fff;
 }
 
+/* Footer */
+footer p{
+  position: relative;
+}
+
 footer {
   position: absolute;
-  bottom: 5%;
+  bottom: 0;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
+}
+#about footer {
+  position: relative;
+  display: block;
+  bottom: 0;
 }
 
 
