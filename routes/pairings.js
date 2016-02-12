@@ -52,7 +52,7 @@ router.get('/:id', authenticate, function(req, res, next) {
   Pairing.findOne({_id: req.params.id})
   //if(!Pairing) return next(makeError(res, 'Document not found', 404));
   .then(function(pairing) {
-    res.render('pairings/show', { pairing: pairing, message: req.flash() });
+    res.render('pairings/show-alt', { pairing: pairing, message: req.flash() });
   }, function(err) {
     return next(err);
   });
@@ -95,7 +95,7 @@ router.put('/:id', authenticate, function(req, res, next) {
   console.log('PAIRING PUT---------------------', pairing);
   if(!pairing) return next(makeError(res, 'Document not found', 404));
   else {
-    console.log('^^^^^^^^^^^^^Pairing being saved ^^^^^^^^^')
+    console.log('^^^^^^^^^^^^^Pairing being saved ^^^^^^^^^');
     pairing.food = req.body.food;
     pairing.drink = req.body.drink;
     pairing.update()
