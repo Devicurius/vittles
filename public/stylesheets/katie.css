@@ -3,6 +3,10 @@ html, body {
   height: 100%;
 }
 
+h1 {
+  margin: 5% 0;
+}
+
 .container-fluid {
   height: 100%;
 }
@@ -37,7 +41,7 @@ html, body {
   background-color: transparent;
 }
 
-#userRecipes .card {
+/*#userRecipes */.card {
   /*background-color: rgba(255, 255, 255, 0.7);*/
   background-color: #fff;
   margin: 2% auto;
@@ -72,15 +76,29 @@ html, body {
   color: #000;
 }
 
-#userRecipes .img-wrapper {
+/*#userRecipes */.card .img-wrapper {
   height: 40vh;
   overflow: hidden;
   width: 100%;
 }
 
-#userRecipes .img-wrapper img {
+/*#userRecipes */.card .img-wrapper img {
   width: 100%;
   height: auto;
+}
+
+.user-icon {
+  color: #000;
+  font-size: 2em;
+  display: block;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+}
+
+.user-icon:hover {
+  color: #000;
+  text-decoration: none;
 }
 
 /* NAV */
