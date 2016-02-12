@@ -31,8 +31,8 @@ html(lang="en")#userRecipes
                 li
                   //a(href="pairings/" + value._id) Delete
                   form(method="POST", action="/pairings/" + value._id + "?_method=DELETE")
-                    a(href="/pairings/" + value._id) Delete
-                    button(type="submit")
+                    //a(href="/pairings/" + value._id) Delete
+                    button(class="pairing-delete" type="submit") Delete
               //p= index+1 + ". " + "vittles: " + value.food + "  potion: " + value.drank
         .col-md-4.col-xs-12.text-center
           .card

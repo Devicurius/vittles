@@ -80,6 +80,15 @@ h1, h2 {
   color: #000;
 }
 
+.pairing-delete {
+  background-color: transparent;
+  border: none;
+}
+
+.pairing-delete:hover {
+  text-decoration: underline;
+}
+
 /*#userRecipes */.card .img-wrapper {
   height: 40vh;
   overflow: hidden;
