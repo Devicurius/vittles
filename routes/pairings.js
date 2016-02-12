@@ -97,11 +97,20 @@ router.put('/:id', authenticate, function(req, res, next) {
     pairing.food = req.body.food;
     pairing.drink = req.body.drink;
     //console.log('!!!!!!!!!!!!', pairing);
-    Pairing.save(pairing)
+    //Pairing.save(pairing)
+    pairing.save()
+    .then(function(pairingSaved) {
+      console.log('!!!!!!!!!!Pairing Saved',pairingSaved);
+      Pairing.find({'_id': { $in: global.currentUser.pairings} })
+    .then(function(pairingUser){
+      console.log('!!!!!!!!!!pairing user:',pairingUser);
+      pairingUser.save()
     .then(function(saved) {
       res.render('/pairings', { pairing: pairing, message: req.flash() });
     }, function(err) {
       return next(err);
+  });
+  });
   });
   });
 });

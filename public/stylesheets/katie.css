@@ -33,30 +33,54 @@ html, body {
   margin-bottom: 5%;
 }
 
-#userRecipes {
-/*  background: url('../bgAllRecipes.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;*/
-}
-
 #userRecipes body {
   background-color: transparent;
 }
 
 #userRecipes .card {
   /*background-color: rgba(255, 255, 255, 0.7);*/
-  background-color: #f1f1f1;
-  margin: 0 auto;
+  background-color: #fff;
+  margin: 2% auto;
   color: #000;
-  height: 40vh;
-  padding-top: 10vh;
-  border: 1px solid #000;
+  /*height: 50vh;*/
+  min-height: 40vh;
+  padding-bottom: 2%;
+  border: 1px solid #ccc;
 }
 
 #userRecipes h1 {
   margin: 5% auto;
+}
+
+#userRecipes h2 {
+  font-family: 'Great Vibes', cursive;
+  text-transform: capitalize;
+}
+
+#userRecipes ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+#userRecipes .card ul li {
+  display: inline-block;
+  padding: 2%;
+}
+
+#userRecipes .card ul li a, #userRecipes .card ul li a:visited {
+  color: #000;
+}
+
+#userRecipes .img-wrapper {
+  height: 40vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+#userRecipes .img-wrapper img {
+  width: 100%;
+  height: auto;
 }
 
 /* NAV */
@@ -81,7 +105,6 @@ html, body {
   color: #fff;
 }
 
-/* Footer */
 
 
 

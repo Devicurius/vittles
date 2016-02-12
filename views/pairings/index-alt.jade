@@ -4,6 +4,7 @@ html(lang="en")#userRecipes
     title= title
     meta( http-equiv='X-UA-Compatible', content='IE=edge' )
     meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+    link(href='https://fonts.googleapis.com/css?family=Great+Vibes', rel='stylesheet', type='text/css')
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/katie.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
@@ -19,6 +20,8 @@ html(lang="en")#userRecipes
         each value, index in pairings
           .col-md-4.col-xs-12.text-center
             .card
+              .img-wrapper.generate
+                img(src="img/power-greens-breakfast-skillet-11.jpg")
               h2= value.food + " & " + value.drink
               ul
                 li
@@ -31,11 +34,29 @@ html(lang="en")#userRecipes
                     a(href="/pairings/" + value._id) Delete
                     button(type="submit")
               //p= index+1 + ". " + "vittles: " + value.food + "  potion: " + value.drank
-          .col-md-4.col-xs-12.text-center
-            .card
-              h2= value.food + " & " + value.drink
-          .col-md-4.col-xs-12.text-center
-            .card
-              h2= value.food + " & " + value.drink
+        .col-md-4.col-xs-12.text-center
+          .card
+            .img-wrapper
+              img(src="img/lunch.jpg")
+            h2= "Lunch & Cold"
+            ul
+              li
+                a(href="#") Edit
+              li
+                a(href="#") View
+              li
+                a(href="#") Delete
+        .col-md-4.col-xs-12.text-center
+          .card
+            .img-wrapper
+              img(src="img/spirits.jpg")
+            h2= "Dinner & Spirits"
+            ul
+              li
+                a(href="#") Edit
+              li
+                a(href="#") View
+              li
+                a(href="#") Delete
     footer
       include ../partials/_footer
