@@ -91,16 +91,21 @@ router.get('/:id/edit', authenticate, function(req, res, next) {
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
   console.log('!!!!!!!!!!!!!!!!!!!!YES');
-  var pairing = currentUser.pairings.findOne({ ObjectId : req.params.id });
-  console.log('PAIRING PUT---------------------', pairing);
-  if(!pairing) return next(makeError(res, 'Document not found', 404));
-  else {
-    console.log('^^^^^^^^^^^^^Pairing being saved ^^^^^^^^^')
-    pairing.food = req.body.food;
-    pairing.drink = req.body.drink;
-    pairing.update()
+  console.log('@@@@@@@Current User Pairing Index:',currentUser.pairings.indexOf(pairing._id));
+  Pairing.findOne({_id: req.params.id})
+  //if(!pairing) return next(makeError(res, 'Document not found', 404));
+  //else {
+    .then(function(found) {
+      console.log('^^^^^^^^^^^^^Pairing being updated ^^^^^^^^^')
+      found.food = req.body.food;
+      found.drink = req.body.drink;
+      found.update()
     .then(function(pairing) {
-      currentUser.save();
+      var p = pairing;
+      currentUser.pairings.indexOf(pairing._id)
+    .then(function(userPairing) {
+      currentUser.pairings[userPairing] = pairing;
+      currentUser.save()
       return('^^^^^^^^^^^Current User Saved^^^^^^^^^^^^')
     .then(function(saved) {
       res.redirect('/pairings');
@@ -108,16 +113,18 @@ router.put('/:id', authenticate, function(req, res, next) {
       return next(err);
     });
   });
-  }
+  });
+  });
+  //}
 });
 
 // DESTROY
 router.delete('/:id', authenticate, function(req, res, next) {
   console.log('###################');
-  var pairing = currentUser.pairings.ObjectId(req.params.id);
+  var pairing = req.params.id;
   console.log('!!!!!!!!!!!!!!!!', pairing);
   if (!pairing) return next(makeError(res, 'Document not found', 404));
-  var index = currentUser.pairings.indexOf(pairing);
+  var index = currentUser.pairings.indexOf(pairing._id);
   currentUser.pairings.splice(index, 1);
   currentUser.save()
   .then(function(saved) {
