@@ -16,25 +16,31 @@ router.get('/', authenticate, function(req, res, next) {
 });
 
 //Edit Profile
-router.get('/:id/edit', authenticate, function(req, res, next) {
-  var user = global.currentUser.id;
-  res.render('users/edit', { user: user });
-});
+// router.get('/:id/edit', authenticate, function(req, res, next) {
+//   console.log('-----------EDIT VIEW-----------');
+//   console.log('----------USER:',global.currentUser +'------------');
+//   var user = global.currentUser;
+//   var update = req.body.username;
+//   console.log('!!!!!!!!!!!!', update);
+//   res.render('users/edit', { user: user });
+// });
 
-//Update Profile
-router.put('/:id', authenticate, function(req, res, next) {
-  var user = global.currentUser.id;
-  if(!user) return next(makeError(res, 'Document not found', 404));
-  else {
-    console.log('!!!!!!!!!!!!!!!',req.body);
-    user.save()
-    .then(function(saved) {
-      res.redirect('/');
-    }, function(err) {
-      return next(err);
-    });
-  }
-});
+// //Update Profile
+// router.put('/:id', authenticate, function(req, res, next) {
+//   console.log('--------PUT----------');
+//   var update = req.params.id;
+//   //if(!update) return next(makeError(res, 'Document NOT found', 404));
+//  // else {
+//     console.log('UPDATE ~~~~~~~~~',update);
+//     user.username = req.body.username;
+//     global.currentUser.save()
+//     .then(function(saved) {
+//       res.redirect('/users/show');
+//     }, function(err) {
+//       return next(err);
+//     });
+//   //}
+// });
 
 //Dashboard
 router.get('/:id', authenticate, function(req, res, next) {
@@ -43,17 +49,17 @@ router.get('/:id', authenticate, function(req, res, next) {
 });
 
 //Delete Profile
-router.delete('/:id', authenticate, function(req, res, next) {
-  var user = global.currentUser.id;
-  if(!user) return next(makeError(res, 'Document not found', 404));
-  else {
-    user.delete()
-    .then(function(saved) {
-      res.redirect('/');
-    }, function(err) {
-      return next(err);
-    });
-  }
-});
+// router.delete('/:id', authenticate, function(req, res, next) {
+//   var user = global.currentUser(req.params.id);
+//   if(!user) return next(makeError(res, 'Document not found', 404));
+//   else {
+//     user.delete()
+//     .then(function(saved) {
+//       res.redirect('/');
+//     }, function(err) {
+//       return next(err);
+//     });
+//   }
+// });
 
 module.exports = router;
