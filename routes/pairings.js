@@ -91,7 +91,7 @@ router.get('/:id/edit', authenticate, function(req, res, next) {
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
   console.log('!!!!!!!!!!!!!!!!!!!!YES');
-  var pairing = currentUser.pairings.findOne({ObjectId : req.params.id});
+  var pairing = currentUser.pairings.findOne({ ObjectId : req.params.id });
   console.log('PAIRING PUT---------------------', pairing);
   if(!pairing) return next(makeError(res, 'Document not found', 404));
   else {
@@ -111,21 +111,21 @@ router.put('/:id', authenticate, function(req, res, next) {
   }
 });
 
-// // DESTROY
-// router.delete('/:id', authenticate, function(req, res, next) {
-//   console.log('###################');
-//   var pairing = currentUser.pairings.ObjectId(req.params.id);
-//   console.log('!!!!!!!!!!!!!!!!', pairing);
-//   //if (!pairing) return next(makeError(res, 'Document not found', 404));
-//   var index = currentUser.pairings.indexOf(pairing);
-//   currentUser.pairings.splice(index, 1);
-//   currentUser.save()
-//   .then(function(saved) {
-//     res.redirect('/pairings');
-//   }, function(err) {
-//     return next(err);
-//   });
-// });
+// DESTROY
+router.delete('/:id', authenticate, function(req, res, next) {
+  console.log('###################');
+  var pairing = currentUser.pairings.ObjectId(req.params.id);
+  console.log('!!!!!!!!!!!!!!!!', pairing);
+  if (!pairing) return next(makeError(res, 'Document not found', 404));
+  var index = currentUser.pairings.indexOf(pairing);
+  currentUser.pairings.splice(index, 1);
+  currentUser.save()
+  .then(function(saved) {
+    res.redirect('/pairings');
+  }, function(err) {
+    return next(err);
+  });
+});
 
 
   // var pairing = currentUser.pairings.id(req.params.id);
