@@ -5,6 +5,7 @@ html(lang="en")
     meta( http-equiv='X-UA-Compatible', content='IE=edge' )
     meta( name='viewport', content='width=device-width, initial-scale=1.0' )
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", crossorigin="anonymous")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
     link(rel='stylesheet', href='/stylesheets/katie.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
@@ -14,8 +15,8 @@ html(lang="en")
       include partials/_header
     .container-fluid
       div
-        h1.text-center Vittles & Drink
-        p.text-center#summary Welcome to Vittles & Drink. VP is all about bringing Southern culture to the mass populace in a fun and accessible way.
+        h1.text-center Vittles & Drinks
+        p.text-center#summary Welcome to Vittles & Drinks. V&D is all about bringing Southern culture to the mass populace through food and libation.
       .row#tech
         h3.text-center Technologies Used:
         ul.text-center
@@ -28,22 +29,38 @@ html(lang="en")
           li Mongoose
           li Mongo
           li Passport
-      .row
-        h3.text-center The Creators:
-        .col-md-4.col-xs-12
-          .wrap.text-center
-            img(src="http://fillmurray.com/200/300")
-            p.title Katie Owen
-            p.description Katie likes to write all the code.
-        .col-md-4.col-xs-12
-          .wrap.text-center
-            img(src="http://fillmurray.com/200/300")
-            p.title Anthony Sims
-            p.description Anthony likes to write all the code.
-        .col-md-4.col-xs-12
-          .wrap.text-center
-            img(src="http://fillmurray.com/200/300")
-            p.title Steven Bell
-            p.description Steven likes to write all the code.
-    footer
-      include partials/_footer
+          li Jade
+    .container-fluid.text-center#iconContainer
+        .row#icons
+            .col-xs-4.col-lg-1.col-lg-offset-1#html5
+            .col-xs-4#css3
+            .col-xs-4#bootstrap
+            .col-xs-4#node
+            .col-xs-4#jquery
+            .col-xs-4#ex
+            .col-xs-4#mongo
+            .col-xs-4#mongoose
+            .col-xs-4#passport
+            .col-xs-4#jade
+    .row#spaceHolder
+    hr
+    .row
+      h3.text-center The Creators:
+      .col-md-4.col-xs-12
+        .wrap.text-center
+          img(src="./img/KatieSlice.png")
+          p.title Katie Owen
+          p.description Katie Owen is a full-stack web developer from Atlanta. When she’s not coding, she’s exploring Atlanta on foot or by bike.
+      .col-md-4.col-xs-12
+        .wrap.text-center
+          img(src="./img/Anthony_Slice.png")
+          p.title Anthony Sims
+          p.description Anthony Sims Jr. is a full-stack web dev and filmmaker. He lives with his wife and two dogs in Chattanooga, TN.
+      .col-md-4.col-xs-12
+        .wrap.text-center
+          img(src="./img/StevenSlice.png")
+          p.title Steven Bell
+          p.description Steven Bell is an Atlanta based entrepreneur and Landscape Architect turned full stack Web Developer.
+      footer
+        include partials/_footer
+
