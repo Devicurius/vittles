@@ -65,8 +65,6 @@ router.post('/', authenticate, function(req, res, next) {
     food: req.body.food,
     drink: req.body.drink,
   });
-  //user.pairings.push(pairing);
-  //console.log(user.pairings);
   pairing.user = user.id;
   pairing.save()
   .then(function(savedPairing) {
@@ -92,27 +90,41 @@ router.get('/:id/edit', authenticate, function(req, res, next) {
 
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
+  console.log('!!!!!!!!!!!!!!!!!!!!YES');
+  console.log('@@@@@@@Current User Pairing Index:',currentUser.pairings.indexOf(pairing._id));
   Pairing.findOne({_id: req.params.id})
-  .then(function(pairing) {
-    pairing.food = req.body.food;
-    pairing.drink = req.body.drink;
-    //console.log('!!!!!!!!!!!!', pairing);
-    Pairing.save(pairing)
+  //if(!pairing) return next(makeError(res, 'Document not found', 404));
+  //else {
+    .then(function(found) {
+      console.log('^^^^^^^^^^^^^Pairing being updated ^^^^^^^^^')
+      found.food = req.body.food;
+      found.drink = req.body.drink;
+      found.update()
+    .then(function(pairing) {
+      var p = pairing;
+      currentUser.pairings.indexOf(pairing._id)
+    .then(function(userPairing) {
+      currentUser.pairings[userPairing] = pairing;
+      currentUser.save()
+      return('^^^^^^^^^^^Current User Saved^^^^^^^^^^^^')
     .then(function(saved) {
-      res.render('/pairings', { pairing: pairing, message: req.flash() });
+      res.redirect('/pairings');
     }, function(err) {
       return next(err);
+    });
   });
   });
+  });
+  //}
 });
 
 // DESTROY
 router.delete('/:id', authenticate, function(req, res, next) {
   console.log('###################');
-  var pairing = currentUser.pairings.ObjectId(req.params.id);
+  var pairing = req.params.id;
   console.log('!!!!!!!!!!!!!!!!', pairing);
-  //if (!pairing) return next(makeError(res, 'Document not found', 404));
-  var index = currentUser.pairings.indexOf(pairing);
+  if (!pairing) return next(makeError(res, 'Document not found', 404));
+  var index = currentUser.pairings.indexOf(pairing._id);
   currentUser.pairings.splice(index, 1);
   currentUser.save()
   .then(function(saved) {

@@ -3,7 +3,7 @@ extends ../layout
 block content
   div
     h2 Update #{pairing.food} & #{pairing.drink}
-    form(method="post", action="/pairings")
+    form(method="POST", action="/pairings/" + pairing._id + "?_method=PUT")
       .form-group.row
         .col-md-2
           label(for="food") Vittles
