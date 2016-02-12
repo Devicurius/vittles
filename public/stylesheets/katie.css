@@ -248,3 +248,12 @@ footer {
   width: 100%;
   clear: both;
 }
+
+#navImage{
+  background-image: url("../img/VandDlogo.png");
+  height: 50px;
+  width: 280px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 5% 0  0 10%;
+}
