@@ -7,7 +7,7 @@ nav.navbar.navbar-default.navbar-fixed-top
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a(class="navbar-brand" href="/") Vittles & Drink
+      a(class="navbar-brand" href="/") Vittles & Drinks
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     #navbar-collapse.collapse.navbar-collapse
@@ -19,9 +19,10 @@ nav.navbar.navbar-default.navbar-fixed-top
         li
           a(href="/about") About
         -if (global.currentUser) {
-          //li #{global.currentUser.local.email}
+          //li
+            //a(href="/users/" + global.currentUser.id + "/edit") #{global.currentUser.local.email}
           li
-            a(href="/users/show") Profile
+            a(href="/users/" + global.currentUser.id) Profile
           li
             a(href="/logout") Logout
         -}

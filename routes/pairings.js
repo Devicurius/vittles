@@ -80,6 +80,60 @@ router.post('/', authenticate, function(req, res, next) {
   });
 });
 
+// EDIT
+router.get('/:id/edit', authenticate, function(req, res, next) {
+  Pairing.findOne({_id: req.params.id})
+  .then(function(pairing) {
+    res.render('pairings/edit', { pairing: pairing, message: req.flash() });
+  }, function(err) {
+    return next(err);
+  });
+});
+
+// UPDATE
+router.put('/:id', authenticate, function(req, res, next) {
+  Pairing.findOne({_id: req.params.id})
+  .then(function(pairing) {
+    pairing.food = req.body.food;
+    pairing.drink = req.body.drink;
+    //console.log('!!!!!!!!!!!!', pairing);
+    Pairing.save(pairing)
+    .then(function(saved) {
+      res.render('/pairings', { pairing: pairing, message: req.flash() });
+    }, function(err) {
+      return next(err);
+  });
+  });
+});
+
+// DESTROY
+router.delete('/:id', authenticate, function(req, res, next) {
+  console.log('###################');
+  var pairing = currentUser.pairings.ObjectId(req.params.id);
+  console.log('!!!!!!!!!!!!!!!!', pairing);
+  //if (!pairing) return next(makeError(res, 'Document not found', 404));
+  var index = currentUser.pairings.indexOf(pairing);
+  currentUser.pairings.splice(index, 1);
+  currentUser.save()
+  .then(function(saved) {
+    res.redirect('/pairings');
+  }, function(err) {
+    return next(err);
+  });
+});
+
+
+  // var pairing = currentUser.pairings.id(req.params.id);
+  // console.log('@@@@@@@@@@@@@@@@@@@',pairing);
+  // if (!pairing) return next(makeError(res, 'Document not found', 404));
+  // var index = currentUser.pairings.indexOf(pairing);
+  // currentUser.pairings.splice(index, 1);
+  // currentUser.save()
+  // .then(function(saved) {
+  //   res.redirect('/pairings');
+  // }, function(err) {
+  //   return next(err);
+  // });
 
 
 module.exports = router;
