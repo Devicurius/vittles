@@ -8,7 +8,7 @@ h1 {
 }
 
 h1, h2 {
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 
 .container-fluid {
@@ -97,7 +97,7 @@ h1, h2 {
 
 /*#userRecipes */.card .img-wrapper img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .user-icon {
