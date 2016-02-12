@@ -91,31 +91,28 @@ router.get('/:id/edit', authenticate, function(req, res, next) {
 // UPDATE
 router.put('/:id', authenticate, function(req, res, next) {
   console.log('!!!!!!!!!!!!!!!!!!!!YES');
-  console.log('@@@@@@@Current User Pairing Index:',currentUser.pairings.indexOf(pairing._id));
+  //find pairing
   Pairing.findOne({_id: req.params.id})
-  //if(!pairing) return next(makeError(res, 'Document not found', 404));
-  //else {
-    .then(function(found) {
-      console.log('^^^^^^^^^^^^^Pairing being updated ^^^^^^^^^')
-      found.food = req.body.food;
-      found.drink = req.body.drink;
-      found.update()
+    //.then(function(pairing) {
+      //console.log('!!!!!!!!!PAIRING', pairing);
+      //find pairing index in current user
+      //currentUser.pairings.indexOf(pairing._id)
     .then(function(pairing) {
-      var p = pairing;
-      currentUser.pairings.indexOf(pairing._id)
-    .then(function(userPairing) {
-      currentUser.pairings[userPairing] = pairing;
-      currentUser.save()
-      return('^^^^^^^^^^^Current User Saved^^^^^^^^^^^^')
+      //console.log('^^^^^^^^^^^^^Pairing being updated ^^^^^^^^^',index);
+      pairing.food = req.body.food;
+      pairing.drink = req.body.drink;
+      pairing.save()
+    // .then(function(userPairing) {
+    //   currentUser.save()
+    //   return('^^^^^^^^^^^Current User Saved^^^^^^^^^^^^')
     .then(function(saved) {
       res.redirect('/pairings');
     }, function(err) {
       return next(err);
     });
   });
-  });
-  });
-  //}
+  // });
+  //});
 });
 
 // DESTROY
@@ -133,19 +130,6 @@ router.delete('/:id', authenticate, function(req, res, next) {
     return next(err);
   });
 });
-
-
-  // var pairing = currentUser.pairings.id(req.params.id);
-  // console.log('@@@@@@@@@@@@@@@@@@@',pairing);
-  // if (!pairing) return next(makeError(res, 'Document not found', 404));
-  // var index = currentUser.pairings.indexOf(pairing);
-  // currentUser.pairings.splice(index, 1);
-  // currentUser.save()
-  // .then(function(saved) {
-  //   res.redirect('/pairings');
-  // }, function(err) {
-  //   return next(err);
-  // });
 
 
 module.exports = router;
