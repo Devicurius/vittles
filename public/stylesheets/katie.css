@@ -85,10 +85,95 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
+
 #about footer {
   position: relative;
   display: block;
   bottom: 0;
 }
 
+#icons {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#bootstrap {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/bootstrap.png");
+   background-size: cover;
+}
+
+#node {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/node.png");
+   background-size: cover;
+}
+
+#html5 {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/html5.png");
+   background-size: cover;
+}
+
+#css3 {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/css3.png");
+   background-size: cover;
+}
+
+#jquery {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/jquery.png");
+   background-size: cover;
+}
+
+#ex {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/express.png");
+   background-size: cover;
+}
+
+#mongo {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/mongodb.png");
+   background-size: cover;
+}
+
+#mongoose {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/mongoose.png");
+   background-size: cover;
+}
+
+#passport {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/passport.png");
+   background-size: cover;
+}
+
+#jade {
+   height: 71px;
+   width: 71px;
+   background-repeat: no-repeat;
+   background-image: url("../img/jade.png");
+   background-size: cover;
+}
 
