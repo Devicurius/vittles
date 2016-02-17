@@ -16,8 +16,8 @@ For thematic inspiration, we looked to progressive Southern culture curators lik
 
 ## Sketches & Wireframes
 
-![sketch1](./public/img/sketch - 1.png) ![sketch2](./public/img/sketch - 1.png)
-![sketch3](./public/img/sketch - 1.png) ![sketch4](./public/img/sketch - 1.png)
+![sketch1](./public/img/sketch-1.png) ![sketch2](./public/img/sketch-2.png)
+![sketch3](./public/img/sketch-4.png) ![sketch4](./public/img/sketch-4.png)
 
 ![wireframe1](./public/img/wireframe1.png) ![wireframe2](./public/img/wireframe2.png) ![wireframe3](./public/img/wireframe3.png) ![wireframe4](./public/img/wireframe4.png) ![wireframe4](./public/img/wireframe5.png) ![wireframe4](./public/img/wireframe6.png)
 
