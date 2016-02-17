@@ -16,8 +16,8 @@ For thematic inspiration, we looked to progressive Southern culture curators lik
 
 ## Sketches & Wireframes
 
-![sketch1](./public/img/sketch - 1.png) ![sketch2](./public/img/sketch - 1.png)
-![sketch3](./public/img/sketch - 1.png) ![sketch4](./public/img/sketch - 1.png)
+![sketch1](./public/img/sketch-1.jpg) ![sketch2](./public/img/sketch-2.jpg)
+![sketch3](./public/img/sketch-3.jpg) ![sketch4](./public/img/sketch-4.jpg)
 
 ![wireframe1](./public/img/wireframe1.png) ![wireframe2](./public/img/wireframe2.png) ![wireframe3](./public/img/wireframe3.png) ![wireframe4](./public/img/wireframe4.png) ![wireframe4](./public/img/wireframe5.png) ![wireframe4](./public/img/wireframe6.png)
 
@@ -50,5 +50,3 @@ For thematic inspiration, we looked to progressive Southern culture curators lik
   To convert simple user input (breakfast food, cold drinks, etc) into unique but attractive food pairings displayed on a dynamic page will require more logic.
 *  *Thematic Development*
   We'd like to continue to refine the aesthetics of the site to reinforce the progressive regional culture of the site.
-
-  
