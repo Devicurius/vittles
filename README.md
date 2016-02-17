@@ -1,10 +1,10 @@
 # WDI PROJECT 3: Vittles & Drinks
 
-[link](https://vittlesanddrinks.herokuapp.com/)
+[See Vittles & Drinks on Heroku](https://vittlesanddrinks.herokuapp.com/)
 
 ## Developers
 
-* [Stephen Bell](https://github.com/thestevenbell)
+* [Steven Bell](https://github.com/thestevenbell)
 * [Katie Owen](https://github.com/khowen)
 * [Anthony Sims Jr.](https://github.com/sims226)
 
@@ -16,21 +16,21 @@ For thematic inspiration, we looked to progressive Southern culture curators lik
 
 ## Sketches & Wireframes
 
-[sketch1](./public/img/sketch - 1.png) [sketch2](./public/img/sketch - 1.png)
-[sketch3](./public/img/sketch - 1.png) [sketch4](./public/img/sketch - 1.png)
+![sketch1](./public/img/sketch - 1.png) ![sketch2](./public/img/sketch - 1.png)
+![sketch3](./public/img/sketch - 1.png) ![sketch4](./public/img/sketch - 1.png)
 
-[wireframe1](./public/img/wireframe1.png) [wireframe2](./public/img/wireframe2.png) [wireframe3](./public/img/wireframe3.png) [wireframe4](./public/img/wireframe4.png) [wireframe4](./public/img/wireframe5.png) [wireframe4](./public/img/wireframe6.png)
+![wireframe1](./public/img/wireframe1.png) ![wireframe2](./public/img/wireframe2.png) ![wireframe3](./public/img/wireframe3.png) ![wireframe4](./public/img/wireframe4.png) ![wireframe4](./public/img/wireframe5.png) ![wireframe4](./public/img/wireframe6.png)
 
 ## Challenges
 
 * *Different Strokes*
-  Each developer came to the project with different skills and different approaches to problem solving. Establishing efficient rapport took time and effort.
+> Each developer came to the project with different skills and different approaches to problem solving. Establishing efficient rapport took time and effort.
 
 * *Git Right or Git Left*
-  While Git and GitHub are simple technologies to employ, version control demanded careful communication and explicit planning, even for a small team and a small project.
+> While Git and GitHub are simple technologies to employ, version control demanded careful communication and explicit planning, even for a small team and a small project.
 
 * *Jaded*
-  Jade was a new technology for all of us. It's a great tool, but there is a learning curve, and it requires solid understanding of HTML and CSS.
+> Jade was a new technology for all of us. It's a great tool, but there is a learning curve, and it requires solid understanding of HTML and CSS.
 
 * HTML5
 * CSS3
